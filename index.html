@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta config -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <!-- css -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="module/font-awesome.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="app">
+        {{mes}}
+    </div> -->
+    <div class="title text-top">Dynamic Partition - First Fit</div>
+    <div class="subtitle text-top">1751747 Zheng Chao</div>
+    <div class="wrapper">
+        <div class="main-storage">
+            <div><p>1-640</p></div>
+        </div>
+        <div class="input">
+            <p class="input-title">Write your job scheduling infomation here</p>
+            <textarea class="input-content" type="text">1 require 130K
+2 require 60K
+3 require 100K
+2 release 60K
+4 require 200K
+3 release 100K
+1 release 130K
+5 require 140K
+6 require 60K
+7 require 50K
+6 require 60K</textarea>
+        </div>
+    </div>
+    <button class="button">Run</button>
+</body>
+
+<!-- dispatcher script -->
+<script src="main.js"></script>
+</html>
