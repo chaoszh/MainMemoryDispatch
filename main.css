@@ -1,19 +1,25 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url('src/Montserrat-Regular.otf');
+}
+
 * {
     margin: 0;
     padding: 0;
     /* border: 1px solid black; */
     box-sizing: border-box;
     /* font setting */
-    font-family: 'Montserrat','等线';
+    font-family: 'Montserrat', '等线';
     font-size: 12px;
     color: #333;
 }
 
-html,body{
-    height:100%;
+
+html, body {
+    height: 100%;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,12 +28,12 @@ body{
     background: #fefefe;
 }
 
-.title{
+.title {
     font-size: 25px;
     margin: 5px;
 }
 
-.subtitle{
+.subtitle {
     font-size: 19px;
     margin: 5px;
     margin-bottom: 25px;
@@ -47,11 +53,10 @@ body{
     min-height: 640px;
 }
 
-.main-storage div{
+.main-storage div {
     width: 100%;
     border-radius: 3px;
     margin: 3px 0 3px 0;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,12 +64,12 @@ body{
     text-align: center;
 }
 
-.main-storage #default{
+.main-storage #default {
     height: 640px;
-    background: linear-gradient(to right top,#249100,#a4d100);
+    background: linear-gradient(to right top, #249100, #a4d100);
 }
 
-.main-storage p{
+.main-storage p {
     color: #fff;
 }
 
@@ -75,17 +80,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-
     position: relative;
 }
 
-.input-procedure{
+.input-procedure {
     display: none;
     flex-direction: column;
     justify-content: center;
     justify-items: center;
-    padding:0 20px 0 20px;
-    
+    padding: 0 20px 0 20px;
     width: 84%;
     height: 89%;
     position: absolute;
@@ -95,13 +98,13 @@ body{
     text-align: center;
 }
 
-.input-procedure p{
+.input-procedure p {
     font-family: '等线';
     font-size: 15px;
     line-height: 175%;
 }
 
-.input-title{
+.input-title {
     margin: 5px;
 }
 
@@ -123,22 +126,22 @@ body{
     border-radius: 10px;
 }
 
-button{
+button {
     position: absolute;
     bottom: 2%;
     height: 27px;
     width: 120px;
-    background: linear-gradient(to right top,#0055bd,#6767ba);
+    background: linear-gradient(to right top, #0055bd, #6767ba);
     border: 0;
     border-radius: 3px;
     color: #ffffff;
 }
 
-button:active{
-    background: linear-gradient(to right top,#0d67d6,#7d7dcf);
+button:active {
+    background: linear-gradient(to right top, #0d67d6, #7d7dcf);
     outline: none;
 }
 
-button:focus{
+button:focus {
     outline: none;
 }

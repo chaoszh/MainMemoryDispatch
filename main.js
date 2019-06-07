@@ -17,5 +17,13 @@ Array.prototype.remove = function (obj) {
     }
 }
 
+var dispatchType = window.location.search;
 //dispatch.js
 document.write("<script language=javascript src=\"js/dispatch.js\"></script>");
+
+if(dispatchType=="?first-fit"){
+    document.write("<script language=javascript src=\"js/first-fit.js\"></script>");
+}
+else{
+    document.write("<script language=javascript src=\"js/best-fit.js\"></script>");
+}
