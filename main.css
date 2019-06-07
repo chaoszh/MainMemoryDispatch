@@ -42,15 +42,13 @@ body{
 
 .main-storage {
     margin: 0 5px 0 5px;
-    padding: 15px 0 15px 0;
+    /* padding: 15px 0 15px 0; */
     width: 250px;
-    height: 95%;
+    min-height: 640px;
 }
 
 .main-storage div{
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to right top,#249100,#a4d100);
     border-radius: 3px;
     margin: 5px 0 5px 0;
     
@@ -61,6 +59,11 @@ body{
     text-align: center;
 }
 
+.main-storage #default{
+    height: 640px;
+    background: linear-gradient(to right top,#249100,#a4d100);
+}
+
 .main-storage p{
     color: #fff;
 }
@@ -68,7 +71,7 @@ body{
 .input {
     margin: 0 5px 0 5px;
     width: 300px;
-    height: 500px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +100,7 @@ body{
 }
 
 button{
-    margin: 5px;
+    margin: 15px;
     height: 27px;
     width: 120px;
     background: linear-gradient(to right top,#0055bd,#6767ba);
