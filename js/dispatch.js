@@ -26,7 +26,9 @@ var button = document.getElementsByClassName("button")[0].onclick=function(){
     // UI multipulations
     document.getElementsByClassName("button")[0].innerHTML="Next";
     document.getElementsByClassName("button")[0].onclick=respond;
+
     read();
+    UIupdate();
     respond();
 }
 
@@ -39,16 +41,30 @@ function read(){
     stotal=requirement.length;
 }
 
-function respond(){
-    if(si<requirement.length){
-        respondEach(requirement[si]);
-        paint();
-        si++;
+function UIupdate(){
+    document.getElementsByClassName("input-procedure")[0].style.display='flex';
+    let str='';
+    for(let i=0;i<requirement.length;i++){
+        let tstr="<p class='procedure'>"+requirement[i]+"<p>";
+        str+=tstr;
     }
-    else{
+    document.getElementsByClassName("input-procedure")[0].innerHTML=str;
+
+    document.getElementsByClassName('procedure')[si].style.color='#4ba400';
+    document.getElementsByClassName('procedure')[si].style.fontWeight='bold';
+
+    document.getElementsByClassName("input-content")[0].style.display='none';
+    document.getElementsByClassName("input-title")[0].style.display='none';
+}
+
+function respond(){
+    respondEach(requirement[si]);
+    paint();
+    si++;
+    if(si>=requirement.length){
         let button=document.getElementsByClassName("button")[0];
         button.innerHTML="Stop";
-        button.style.background='linear-gradient(to right top,#cf0643,#f74343)';
+        button.style.background='linear-gradient(to right top,#555,#454545)';
         button.onclick=function(){return;};
     }
 }
@@ -155,13 +171,15 @@ function paint(){
     let dstr='';
     for(let i=0;i<p.length;i++){
         let space=p[i][1]-p[i][0]+1;
-        let state=p[i][2]=='free'?'':"task"+p[i][2];
+        let state=p[i][2]=='free'?'':"TASK"+p[i][2];
         let color=p[i][2]=='free'?cGreen:cRed;
         let str="<div style='height:"+space+"px; background:"+color+";'><p>"+p[i][0]+'-'+p[i][1]+"  "+state+"</p></div>";
 
         dstr+=str;
     }
     msdiv.innerHTML=dstr;
+
+    UIupdate();
 }
 
 function debug(){

@@ -75,6 +75,30 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    position: relative;
+}
+
+.input-procedure{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    padding:0 20px 0 20px;
+    
+    width: 84%;
+    height: 89%;
+    position: absolute;
+    top: 2%;
+    border: #4ba400 1px solid;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.input-procedure p{
+    font-family: '等线';
+    font-size: 15px;
+    line-height: 175%;
 }
 
 .input-title{
@@ -100,7 +124,8 @@ body{
 }
 
 button{
-    margin: 15px;
+    position: absolute;
+    bottom: 2%;
     height: 27px;
     width: 120px;
     background: linear-gradient(to right top,#0055bd,#6767ba);
