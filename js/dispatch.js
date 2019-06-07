@@ -40,9 +40,17 @@ function read(){
 }
 
 function respond(){
-    respondEach(requirement[si]);
-    paint();
-    si++;
+    if(si<requirement.length){
+        respondEach(requirement[si]);
+        paint();
+        si++;
+    }
+    else{
+        let button=document.getElementsByClassName("button")[0];
+        button.innerHTML="Stop";
+        button.style.background='linear-gradient(to right top,#cf0643,#f74343)';
+        button.onclick=function(){return;};
+    }
 }
 
 function respondEach(str){
@@ -78,6 +86,7 @@ function require(id, space){
             //flag
             result_flag=true;
             // debug();
+            break;
         }
     }
     if(result_flag==false){
@@ -91,7 +100,7 @@ function release(id, space){
             fp.push([bp[i][0],bp[i][1]]);
             sort(fp);
             merge(fp);
-            // bp.remove(i);
+            bp.remove(i);
             // debug();
         }
     }
@@ -108,22 +117,19 @@ function sort(arr){
             }
         }
         //swap
-        let temp=arr[i][0];
-        arr[i][0]=min;
-        arr[index][0]=temp;
+        let temp=arr[i];
+        arr[i]=arr[index];
+        arr[index]=temp;
     }
 }
 
 function merge(arr){
-    let post=arr[0][1];
     for(let i=1;i<arr.length;i++){
-        let remember=arr[i][1];
-        if(arr[i][1]==post+1){
+        if(arr[i][0]==arr[i-1][1]+1){
             //connected
             arr[i-1][1]=arr[i][1];
             arr.remove(i);
         }
-        post=remember;
     }
 }
 
@@ -149,9 +155,9 @@ function paint(){
     let dstr='';
     for(let i=0;i<p.length;i++){
         let space=p[i][1]-p[i][0]+1;
-        let state=p[i][2]=='free'?'':p[i][2];
+        let state=p[i][2]=='free'?'':"task"+p[i][2];
         let color=p[i][2]=='free'?cGreen:cRed;
-        let str="<div style='height:"+space+"px; background:"+color+";'><p>"+p[i][0]+'-'+p[i][1]+' '+state+"</p></div>";
+        let str="<div style='height:"+space+"px; background:"+color+";'><p>"+p[i][0]+'-'+p[i][1]+"  "+state+"</p></div>";
 
         dstr+=str;
     }
