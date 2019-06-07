@@ -23,5 +23,7 @@ if(dispatchType=="?first-fit"){
     document.write("<script language=javascript src=\"js/first-fit.js\"></script>");
 }
 else{
+    document.getElementsByClassName("title")[0].innerHTML="Dynamic Partition - Best Fit";
+    document.getElementsByTagName("title")[0].innerHTML="Best Fit";
     document.write("<script language=javascript src=\"js/best-fit.js\"></script>");
 }
