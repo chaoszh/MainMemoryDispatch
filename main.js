@@ -1,6 +1,4 @@
 // all javascript files
-// vue.js
-document.write("<script language=javascript src=\"module/vue.min.js\"></script>");
 //initial
 Array.prototype.remove = function (obj) {
     for (var i = 0; i < this.length; i++) {
