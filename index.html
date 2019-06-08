@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- meta config -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible">
-    <!-- css -->
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="module/font-awesome.css">
-    <title>First-Fit</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Make a choice</title>
+    <style>
+        @font-face {
+            font-family: "Montserrat";
+            src: url('src/Montserrat-Regular.otf');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            font-family: 'Monserrat';
+            font-size: 20px;
+            height: 120px;
+            width: 180px;
+            margin: 20px;
+            background: linear-gradient(to right top, #0055bd, #6767ba);
+            border: 0;
+            border-radius: 10px;
+            color: #ffffff;
+        }
+
+        .title {
+            font-family: 'Montserrat';
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .subtitle {
+            font-family: 'Montserrat';
+            font-size: 15px;
+            margin: 17px;
+        }
+
+        button:active {
+            background: linear-gradient(to right top, #0d67d6, #7d7dcf);
+            outline: none;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- <div id="app">
-        {{mes}}
-    </div> -->
-    <div class="title text-top">Dynamic Partition - First Fit</div>
-    <div class="subtitle text-top">1751747 Zheng Chao</div>
+    <p class="title">Choose Your Dynamic Partitioning Method</p>
+    <p class="subtitle">Zheng Chao 1751747</p>
     <div class="wrapper">
-        <div class="main-storage">
-            <div id='default'><p>1-640</p></div>
-        </div>
-        <div class="input">
-            <div class="input-procedure"></div>
-            <p class="input-title">Write your job scheduling infomation here</p>
-            <textarea class="input-content" type="text">1 require 130K
-2 require 60K
-3 require 100K
-2 release 60K
-4 require 200K
-3 release 100K
-1 release 130K
-5 require 140K
-6 require 60K
-7 require 50K
-6 require 60K</textarea>
-            <button class="button">Run</button>
-        </div>
-        
+        <button onclick="firstFit()">First-fit</button>
+        <button onclick="bestFit()">Best-fit</button>
     </div>
+    <script>
+        function firstFit() {
+            window.location.href = "main.html?first-fit";
+        }
+        function bestFit() {
+            window.location.href = "main.html?best-fit";
+        }
+    </script>
 </body>
 
-<!-- dispatcher script -->
-<script src="main.js"></script>
 </html>
